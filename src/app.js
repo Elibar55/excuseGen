@@ -3,26 +3,70 @@ import "bootstrap";
 import "./style.css";
 
 window.onload = function() {
-  let who = ["The dog", "My grandma", "The mailman", "My bird"];
-  let action = ["ate", "peed", "crushed", "broke"];
-  let what = ["my homework", "my phone", "the car"];
-  let when = [
-    "before the class",
-    "when I was sleeping",
-    "while I was exercising",
-    "during my lunch",
-    "while I was praying"
+  let first = "A ";
+  let adj = [
+    "two headed ",
+    "nuclear ",
+    "angry ",
+    "lonely ",
+    "crazy ",
+    "glowing ",
+    "smelly ",
+    "slow ",
+    "old "
+  ];
+  let noun = [
+    "jogger ",
+    "racoon ",
+    "dog ",
+    "merchant ",
+    "driver ",
+    "comedian ",
+    "pinecone "
+  ];
+  let action = [
+    "took my ",
+    "threw my ",
+    "yelled at my ",
+    "kicked my ",
+    "stole my ",
+    "burned my ",
+    "bit my ",
+    "hit my "
+  ];
+  let possetion = [
+    "toe ",
+    "car ",
+    "watch ",
+    "shoe ",
+    "wallet ",
+    "shirt ",
+    "keys ",
+    "computer ",
+    "phone ",
+    "sandwich "
+  ];
+  let where = [
+    "on the street",
+    "in my house",
+    "in my driveway",
+    "in front of the office",
+    "near the mall",
+    "near the toilet",
+    "at the bus station"
   ];
 
-  function generateExcuse() {
-    let whoIndex = Math.floor(Math.random() * who.length);
-    let actionIndex = Math.floor(Math.random() * action.length);
-    let whatIndex = Math.floor(Math.random() * what.length);
-    let whenIndex = Math.floor(Math.random() * when.length);
+  let rdm1 = Math.floor(Math.random() * adj.length);
+  let rdm2 = Math.floor(Math.random() * noun.length);
+  let rdm3 = Math.floor(Math.random() * action.length);
+  let rdm4 = Math.floor(Math.random() * possetion.length);
+  let rdm5 = Math.floor(Math.random() * where.length);
 
-    return `${who[whoIndex]} ${action[actionIndex]} ${what[whatIndex]} ${when[whenIndex]}`;
-  }
-
-  document.getElementById("excuse").innerHTML = generateExcuse();
-  console.log("Hello Rigo from the console!");
+  document.querySelector("#excuse").innerHTML =
+    first +
+    adj[rdm1] +
+    noun[rdm2] +
+    action[rdm3] +
+    possetion[rdm4] +
+    where[rdm5];
 };
