@@ -34,7 +34,7 @@ window.onload = function() {
     "bit my ",
     "hit my "
   ];
-  let possetion = [
+  let possession = [
     "toe ",
     "car ",
     "watch ",
@@ -56,17 +56,21 @@ window.onload = function() {
     "at the bus station"
   ];
 
-  let rdm1 = Math.floor(Math.random() * adj.length);
-  let rdm2 = Math.floor(Math.random() * noun.length);
-  let rdm3 = Math.floor(Math.random() * action.length);
-  let rdm4 = Math.floor(Math.random() * possetion.length);
-  let rdm5 = Math.floor(Math.random() * where.length);
+  const getRandomNum = arr => {
+    return Math.floor(Math.random() * arr.length);
+  };
+
+  let rdm1 = getRandomNum(adj);
+  let rdm2 = getRandomNum(noun);
+  let rdm3 = getRandomNum(action);
+  let rdm4 = getRandomNum(possession);
+  let rdm5 = getRandomNum(where);
 
   document.querySelector("#excuse").innerHTML =
     first +
     adj[rdm1] +
     noun[rdm2] +
     action[rdm3] +
-    possetion[rdm4] +
+    possession[rdm4] +
     where[rdm5];
 };
